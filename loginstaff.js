@@ -8,7 +8,7 @@ var count=1;
 
    if(username=="Staff" && password=="Staff"){
         alert("Login Succesful");
-        window.location= "http://127.0.0.1:5501/staff.html"
+        window.location= "http://127.0.0.1:5501/course.html"
         return;
     }
     else
