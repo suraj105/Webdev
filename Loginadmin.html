@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel ="stylesheet" href="./style.css">
+  <title>Login</title>
+  <script src ="./loginadmin.js"></script>
+  </head>
+
+	<body>
+    <header>
+      <div class = con1>
+          <nav>
+              <ul>
+                 <li> <a href="./index.html" >Home</a></li>
+                 <li> <a href="./project.html" >Projects</a></li>
+                 <li> <a href="./skills.html" >Skills</a></li>
+                 <li> <a href="mailto:surraya58@gmail.com" >Get in touch</a></li>
+                 <div class="dropdown">
+                  <button class="dropbtn">Login</button>
+                  <div class="dropdown-content">
+                    <a href="./Loginadmin.html">as Admin</a>
+                    <a href="./Loginstaff.html">as Staff</a>
+                  </div>
+                </div> 
+                </ul>
+          </nav>
+  
+     
+    </header>  
+	
+	<div id="main">
+	<div class="h-tag">
+	<h2>Login as Admin</h2>
+	</div>
+	
+	<div class="login">
+	<table cellspacing="2" align="center" cellpadding="8" border="0">
+	<td align="right">Enter Username :</td>
+	<td><input type="text" placeholder="Enter Username here" id="t1" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="right">Enter Password :</td>
+	<td><input type="password" placeholder="Enter Password here" id="t2" class="tb" /></td>
+	</tr>
+	
+	<td></td>
+	<td>
+	<input type="login" value="Login" onclick="validate()" id="submit" class="btn" />
+	<input type="clear" value="clear" class="btn" onclick="clearFunc()" /></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+
+    <script src="./main.js"></script>
+
+    <div class="foot">
+        <footer>
+        <p class ="ww">  Author: Suraj C Raya</p>
+        <p class ="ww"> ©2021 copyright </a></p>
+      </footer> 
+      </div>
+    
+
+	</body>
+	</html>

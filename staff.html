@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel ="stylesheet" href="./try.css">
+  <script src="staff.js"></script>
+  <title>Signup</title>
+
+  </head>
+
+	<body>
+    <header>
+    <div class = con1>
+        <nav>
+            <ul>
+               <li> <a href="./index.html" >Home</a></li>
+               <li> <a href="./project.html" >Projects</a></li>
+               <li> <a href="./skills.html" >Skills</a></li>
+               <li> <a href="mailto:surraya58@gmail.com" >Get in touch</a></li>
+               <div class="dropdown">
+                <button class="dropbtn">Login</button>
+                <div class="dropdown-content">
+                  <a href="./Loginadmin.html">as Admin</a>
+                  <a href="./Loginstaff.html">as Staff</a>
+                </div>
+              </div> 
+              </ul>
+        </nav>
+
+   
+  </header>  
+
+  <div class ="choice">
+     	<button class="choose">Staffs</button>
+	</div>
+	<div class="sep">
+        <div id = "main">
+        <table>
+            <tr>
+                <td>
+                    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                        <div>
+                            <label>Staff ID</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                            <input type="text" name="sid" id="sid">
+                        </div>
+                        <div>
+                            <label>First Name</label>
+                            <input type="text" name="fname" id="fname">
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input type="text" name="lname" id="lname">
+                        </div>
+                        <div>
+                            <label>DOB</label>
+                            <input type="text" name="dob" id="dob">
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+                        <div>
+                            <p>Gender</p>
+                            <input type="radio" id="gender1" name="gender1" value="male">
+                            <label for="gender1">Male</label><br>
+                            <input type="radio" id="gender2" name="gender2" value="female">
+                            <label for="gender2">Female</label><br>
+                        </div>   
+                        <div  class="form-action-buttons">
+                            <input type="submit" value="Add Staff">
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <table class="list" id="employeeList">
+                        <thead>
+                            <tr>
+                                <th>Staff ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>DOB</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+      
+
+  </div>
+  </div>
+	
+	
+    <script src="./main.js"></script>
+
+    <div class="foot">
+        <footer>
+        <p class ="ww">  Author: Suraj C Raya</p>
+        <p class ="ww"> ©2021 copyright </a></p>
+      </footer> 
+      </div>
+    
+
+	</body>
+	</html>
