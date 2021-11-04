@@ -1,7 +1,7 @@
 var selectedRow = null
 
 function onFormSubmit() {
-    if (validate()) {
+    if (validate() && validatename() && validateemail()) {
         var formData = readFormData();
         if (selectedRow == null)
             insertNewRecord(formData);
@@ -18,8 +18,7 @@ function readFormData() {
     formData["lname"] = document.getElementById("lname").value;
     formData["dob"] = document.getElementById("dob").value;
     formData["email"] = document.getElementById("email").value;
-    formData["gender"] = document.getElementById("gender1").value;
-    formData["gender"] = document.getElementById("gender2").value;
+    formData["gender"] = document.querySelector('input[name="gender"]:checked').value;
 
 
 
@@ -40,8 +39,7 @@ function insertNewRecord(data) {
     cell5 = newRow.insertCell(4);
     cell5.innerHTML = data.email;
     cell5 = newRow.insertCell(5);
-    cell5.innerHTML = data.gender1;
-    cell5.innerHTML = data.gender2;
+    cell5.innerHTML = data.gender;
     cell6 = newRow.insertCell(6);
     cell6.innerHTML = `<a1 onClick="onEdit(this)">Edit</a>
                        <a1 onClick="onDelete(this)">Delete</a>`;
@@ -53,6 +51,7 @@ function resetForm() {
     document.getElementById("lname").value = "";
     document.getElementById("dob").value = "";
     document.getElementById("email").value = "";
+    document.getElementById("gender").value = "";
 
 
 
@@ -66,6 +65,8 @@ function onEdit(td) {
     document.getElementById("lname").value = selectedRow.cells[2].innerHTML;
     document.getElementById("dob").value = selectedRow.cells[3].innerHTML;
     document.getElementById("email").value = selectedRow.cells[3].innerHTML;
+    document.getElementById("gender").value = selectedRow.cells[3].innerHTML;
+
 
 
 }
@@ -75,8 +76,7 @@ function updateRecord(formData) {
     selectedRow.cells[2].innerHTML = formData.lname;
     selectedRow.cells[3].innerHTML = formData.dob;
     selectedRow.cells[4].innerHTML = formData.email;
-    selectedRow.cells[5].innerHTML = formData.gender1;
-    selectedRow.cells[5].innerHTML = formData.gender2;
+    selectedRow.cells[5].innerHTML = formData.gender;
 
 
 
@@ -101,3 +101,29 @@ function validate() {
     }
     return isValid;
 }
+
+function validatename() {
+        isValid = true;
+        if (document.getElementById("fname").value == "") {
+            isValid = false; 
+            document.getElementById("fnameValidationError").classList.remove("hide");
+        } else {
+            isValid = true;
+            if (!document.getElementById("fnameValidationError").classList.contains("hide"))
+                document.getElementById("fnameValidationError").classList.add("hide");
+        }
+        return isValid;
+    }
+    
+function validateemail() {
+        isValid = true;
+        if (document.getElementById("email").value == "") {
+            isValid = false; 
+            document.getElementById("emailValidationError").classList.remove("hide");
+        } else {
+            isValid = true;
+            if (!document.getElementById("emailValidationError").classList.contains("hide"))
+                document.getElementById("emailValidationError").classList.add("hide");
+        }
+        return isValid;
+    }
