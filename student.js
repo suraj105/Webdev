@@ -18,8 +18,7 @@ function readFormData() {
     formData["lname"] = document.getElementById("lname").value;
     formData["dob"] = document.getElementById("dob").value;
     formData["email"] = document.getElementById("email").value;
-    formData["gender1"] = document.getElementById("gender1").value;
-    formData["gender2"] = document.getElementById("gender2").value;
+    formData["gender"] = document.querySelector('input[name="gender"]:checked').value;
     formData["drop"] = document.getElementById("drop").value;
 
 
@@ -41,8 +40,7 @@ function insertNewRecord(data) {
     cell5 = newRow.insertCell(4);
     cell5.innerHTML = data.email;
     cell6 = newRow.insertCell(5);
-    cell6.innerHTML = data.gender1;
-    cell6.innerHTML = data.gender2;
+    cell6.innerHTML = data.gender;
     cell7 = newRow.insertCell(6);
     cell7.innerHTML = data.drop;
     cell7 = newRow.insertCell(7);
@@ -57,6 +55,8 @@ function resetForm() {
     document.getElementById("dob").value = "";
     document.getElementById("email").value = "";
     document.getElementById("drop").value = "";
+    document.getElementById("gender").value = "";
+
 
 
 
@@ -70,8 +70,7 @@ function onEdit(td) {
     document.getElementById("lname").value = selectedRow.cells[2].innerHTML;
     document.getElementById("dob").value = selectedRow.cells[3].innerHTML;
     document.getElementById("email").value = selectedRow.cells[4].innerHTML;
-    document.getElementById("gender1").value = selectedRow.cells[5].innerHTML;
-    document.getElementById("gender2").value = selectedRow.cells[5].innerHTML;
+    document.getElementById("gender").value = selectedRow.cells[5].innerHTML;
     document.getElementById("drop").value = selectedRow.cells[6].innerHTML;
 
 
@@ -83,8 +82,7 @@ function updateRecord(formData) {
     selectedRow.cells[2].innerHTML = formData.lname;
     selectedRow.cells[3].innerHTML = formData.dob;
     selectedRow.cells[4].innerHTML = formData.email;
-    selectedRow.cells[5].innerHTML = formData.gender1;
-    selectedRow.cells[5].innerHTML = formData.gender2;
+    selectedRow.cells[5].innerHTML = formData.gender;
     selectedRow.cells[6].innerHTML = formData.drop;
 }
 
