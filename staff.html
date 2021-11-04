@@ -47,7 +47,7 @@
                             <input type="text" name="sid" id="sid">
                         </div>
                         <div>
-                            <label>First Name</label>
+                            <label>First Name</label><label class="validation-error hide" id="fnameValidationError">This field is required.</label>
                             <input type="text" name="fname" id="fname">
                         </div>
                         <div>
@@ -59,15 +59,18 @@
                             <input type="text" name="dob" id="dob">
                         </div>
                         <div>
-                            <label>Email</label>
+                            <label>Email</label><label class="validation-error hide" id="emailValidationError">This field is required.</label>
                             <input type="text" name="email" id="email">
                         </div>
                         <div>
                             <p>Gender</p>
-                            <input type="radio" id="gender1" name="gender1" value="male">
-                            <label for="gender1">Male</label><br>
-                            <input type="radio" id="gender2" name="gender2" value="female">
-                            <label for="gender2">Female</label><br>
+
+                            <input type="radio" id="gender" name="gender" value="male">
+                            <label for="gender1">male</label>
+
+                            <input type="radio" id="gender" name="gender" value="female">
+                             <label for="gender2">female</label>
+
                         </div>   
                         <div  class="form-action-buttons">
                             <input type="submit" value="Add Staff">
