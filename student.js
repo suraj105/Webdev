@@ -1,7 +1,7 @@
 var selectedRow = null;
 
 function onFormSubmit() {
-    if (validate()) {
+    if (validateID() && validatename() && validateemail() && validatedrop()) {
         var formData = readFormData();
         if (selectedRow == null)
             insertNewRecord(formData);
@@ -95,7 +95,7 @@ function onDelete(td) {
         resetForm();
     }
 }
-function validate() {
+function validateID() {
     isValid = true;
     if (document.getElementById("sid").value == "") {
         isValid = false; 
@@ -104,6 +104,45 @@ function validate() {
         isValid = true;
         if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
             document.getElementById("fullNameValidationError").classList.add("hide");
+    }
+    return isValid;
+}
+
+function validatename() {
+    isValid = true;
+    if (document.getElementById("fname").value == "") {
+        isValid = false; 
+        document.getElementById("fnameValidationError").classList.remove("hide");
+    } else {
+        isValid = true;
+        if (!document.getElementById("fnameValidationError").classList.contains("hide"))
+            document.getElementById("fnameValidationError").classList.add("hide");
+    }
+    return isValid;
+}
+
+function validateemail() {
+    isValid = true;
+    if (document.getElementById("email").value == "") {
+        isValid = false; 
+        document.getElementById("emailValidationError").classList.remove("hide");
+    } else {
+        isValid = true;
+        if (!document.getElementById("emailValidationError").classList.contains("hide"))
+            document.getElementById("emailValidationError").classList.add("hide");
+    }
+    return isValid;
+}
+
+function validatedrop() {
+    isValid = true;
+    if (document.getElementById("drop").value == "") {
+        isValid = false; 
+        document.getElementById("dropValidationError").classList.remove("hide");
+    } else {
+        isValid = true;
+        if (!document.getElementById("dropValidationError").classList.contains("hide"))
+            document.getElementById("dropValidationError").classList.add("hide");
     }
     return isValid;
 }
